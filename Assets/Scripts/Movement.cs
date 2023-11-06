@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
 
 
     private int desiredLane = 1; // upper lane = 0, middel lane = 1, lower lane = 2
-    public float laneDistance = 4; // the length between lanes
+    public float laneDistance = 20; // the length between lanes
     
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.DownArrow)) 
+        if (Input.GetKeyDown(KeyCode.UpArrow)) 
         {
             desiredLane++;
             if (desiredLane == 3)
@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
      
         }
         
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             desiredLane--;
             if (desiredLane == -1)
@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
             newPosition += Vector3.up * laneDistance;
         }
 
-        transform.position = Vector3.Lerp(transform.position,newPosition,80*Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position,newPosition,4*Time.deltaTime);
     }
 
   
