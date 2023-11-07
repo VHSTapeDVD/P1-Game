@@ -5,7 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private CharacterController controller;
-    
+    public KeyCode inputup = KeyCode.UpArrow;
+    public KeyCode inputdown = KeyCode.DownArrow;
 
 
     private int desiredLane = 1; // upper lane = 0, middel lane = 1, lower lane = 2
@@ -22,7 +23,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.UpArrow)) 
+        if (Input.GetKeyDown(inputup)) 
         {
             desiredLane++;
             if (desiredLane == 3)
@@ -30,7 +31,7 @@ public class Movement : MonoBehaviour
      
         }
         
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(inputdown))
         {
             desiredLane--;
             if (desiredLane == -1)
