@@ -7,8 +7,9 @@ public class Movement : MonoBehaviour
     private CharacterController controller;
     public KeyCode inputup = KeyCode.UpArrow;
     public KeyCode inputdown = KeyCode.DownArrow;
+    public float sidewaysSpeed;
 
-
+    private Vector3 direction;
     private int desiredLane = 1; // upper lane = 0, middel lane = 1, lower lane = 2
     public float laneDistance = 20; // the length between lanes
     
@@ -22,6 +23,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        direction.x = sidewaysSpeed;
 
         if (Input.GetKeyDown(inputup)) 
         {
@@ -41,7 +44,7 @@ public class Movement : MonoBehaviour
 
         // Calculation of new position
 
-        Vector3 newPosition = transform.position.z * transform.position.y * transform.up;
+        Vector3 newPosition = transform.right + transform.position.z *  transform.position.y * transform.right;
 
         if (desiredLane == 0)
         {
