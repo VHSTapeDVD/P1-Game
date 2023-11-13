@@ -15,4 +15,10 @@ public class goobleatt : MonoBehaviour
     {
         
     }
+     void OnTriggerEnter(Collider other)
+ {
+     if (other.name == "KW") {
+         Destroy (gameObject);
+     }
+ }
 }
