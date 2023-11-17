@@ -9,26 +9,23 @@ public class goobleatt : MonoBehaviour
     public float timeThreshold2 = 100;
     public float transitionDuration = 10; // Adjust this value for the duration of the speed transition
 
-    private float startTime;
-
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Rigidbody>().velocity = startspeed;
-        startTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float elapsed = Time.time - startTime;
+        Debug.Log(Time.time);
 
-        if (elapsed >= timeThreshold1 && elapsed < timeThreshold2)
+        if (Time.time >= timeThreshold1 && Time.time < timeThreshold2)
         {
             ChangeSpeed(startspeed, medspeed, timeThreshold1);
             Debug.Log("Medspeed reached for gooble");
         }
-        else if (elapsed >= timeThreshold2)
+        else if (Time.time >= timeThreshold2)
         {
             ChangeSpeed(medspeed, fastspeed, timeThreshold2);
             Debug.Log("Fastspeed reached gooble");
@@ -37,8 +34,7 @@ public class goobleatt : MonoBehaviour
 
     void ChangeSpeed(Vector3 fromSpeed, Vector3 toSpeed, float threshold)
     {
-        float elapsed = Time.time - startTime;
-        float t = Mathf.Clamp01(elapsed / transitionDuration);
+        float t = Mathf.Clamp01(Time.time / transitionDuration);
 
         // Smoothly interpolate between fromSpeed and toSpeed
         Vector3 newSpeed = Vector3.Lerp(fromSpeed, toSpeed, t);
@@ -46,11 +42,6 @@ public class goobleatt : MonoBehaviour
         // Apply the new speed
         GetComponent<Rigidbody>().velocity = newSpeed;
 
-        // Reset the start time if the threshold is reached
-        if (elapsed >= threshold)
-        {
-            startTime = Time.time;
-        }
     }
 
     void OnTriggerEnter(Collider other)
