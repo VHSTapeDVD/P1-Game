@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
 
     private Vector3 direction;
     private int desiredLane = 1; // upper lane = 0, middel lane = 1, lower lane = 2
-    public float laneDistance = 20; // the length between lanes
+    public float laneDistance = 30; // the length between lanes
     
 
     // Start is called before the first frame update

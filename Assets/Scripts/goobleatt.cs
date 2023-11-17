@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class goobleatt : MonoBehaviour
 {
-    public Vector3 startspeed = new Vector3(-2, 0, 0);
-    public Vector3 medspeed = new Vector3(-4, 0, 0);
-    public Vector3 fastspeed = new Vector3(-6, 0, 0);
+    public Vector3 startspeed = new Vector3(-20, 0, 0);
+    public Vector3 medspeed = new Vector3(-40, 0, 0);
+    public Vector3 fastspeed = new Vector3(-60, 0, 0);
     public float timeThreshold1 = 50;
     public float timeThreshold2 = 100;
     public float transitionDuration = 10; // Adjust this value for the duration of the speed transition

@@ -22,29 +22,32 @@ public class gameflow : MonoBehaviour
         {
             if (isGooble)
             {
-                randYcoor = Random.Range(0, 3);
-                Instantiate(goobleObj, new Vector3(15, randYcoor, 0), goobleObj.rotation);
+                int[] allowedValues = { -30, 0, 30 };
+                randYcoor = allowedValues[Random.Range(0, allowedValues.Length)];
+                Instantiate(goobleObj, new Vector3(240, randYcoor, 0), goobleObj.rotation);
             }
             else
             {
                 // Spawn 6 plasticObj in a row
                 for (int i = 0; i < spawnLimit; i++)
                 {
-                    randYcoor = Random.Range(0, 3);
-                    Instantiate(plasticObj, new Vector3(16, randYcoor, 0), plasticObj.rotation);
+                    int[] allowedValues = { -30, 0, 30 };
+                    randYcoor = allowedValues[Random.Range(0, allowedValues.Length)];
+                    Instantiate(plasticObj, new Vector3(160, randYcoor, 0), plasticObj.rotation);
                     yield return new WaitForSeconds(2);
 
                     // Spawn an extra plasticObj every 3 iterations
                     if ((i + 1) % extraPlasticEvery == 0)
                     {
-                        randYcoor = Random.Range(0, 3);
-                        Instantiate(plasticObj, new Vector3(16, randYcoor, 0), plasticObj.rotation);
+                        int[] allowedValuesExtra = { -30, 0, 30 };
+                        randYcoor = allowedValuesExtra[Random.Range(0, allowedValuesExtra.Length)];
+                        Instantiate(plasticObj, new Vector3(160, randYcoor, 0), plasticObj.rotation);
                     }
                 }
             }
 
             isGooble = !isGooble; // Switch between goobleObj and plasticObj
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
