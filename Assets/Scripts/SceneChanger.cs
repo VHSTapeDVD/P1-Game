@@ -9,7 +9,7 @@ public class SceneChanger : MonoBehaviour
     public void Loadlevelscene()
 
     {
-        SceneManager.LoadScene("Flappy Bird");
+        SceneManager.LoadScene("GameWindow");
     }
 
 }
