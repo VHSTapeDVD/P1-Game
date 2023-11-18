@@ -18,7 +18,7 @@ public class goobleatt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Time.time);
+       
 
         if (Time.time >= timeThreshold1 && Time.time < timeThreshold2)
         {

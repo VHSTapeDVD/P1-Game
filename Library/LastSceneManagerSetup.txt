@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/GameWindow.unity
+- path: "C:/Users/AlexanderSch\xF8nning/Downloads/Turtle Animation (1)/Turtle Animation/Assets/Scenes/Turtle2.unity"
   isLoaded: 1
   isActive: 1
   isSubScene: 0

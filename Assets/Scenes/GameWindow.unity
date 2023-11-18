@@ -609,7 +609,6 @@ GameObject:
   - component: {fileID: 1764175620}
   - component: {fileID: 1764175619}
   - component: {fileID: 1764175624}
-  - component: {fileID: 1764175626}
   - component: {fileID: 1764175625}
   m_Layer: 0
   m_Name: Skildpadde
@@ -747,42 +746,21 @@ MonoBehaviour:
   inputdown: 274
   sidewaysSpeed: 0
   laneDistance: 30
---- !u!95 &1764175625
-Animator:
-  serializedVersion: 5
+--- !u!114 &1764175625
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764175618}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 941ffea2b32514ee7b4eb3d5d777ffc6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!111 &1764175626
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764175618}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a43c7d1a31d3e4f25ae3c7d37bdda5e1, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017826ac720f4754b814a28d7a73e5b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  maxHealth: 5
+  healthBar: {fileID: 0}
 --- !u!1 &1864773322
 GameObject:
   m_ObjectHideFlags: 0
